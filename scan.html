@@ -3,13 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <script type="text/javascript">
+    	function backToApp() {
+    		var cardNumber = document.getElementById("cc-num").value
+    		location.href = "scanCard://?number=" + cardNumber
+    	}
+    </script>
     
   </head>
   <body>
   	<h1>Scan Credit Card Test</h1>
-  	<label>Credit card number: 
-  		<input type="text" id="cc-num" autocomplete="cc-number" x-autocompletetype="cc-number" pattern="\d*">
-  	</label>
-  	<a href="cardScan://">Back to App</a>
+  	<form name="card">
+  		<label>Credit card number: 
+  			<input type="text" id="cc-num" autocomplete="cc-number" x-autocompletetype="cc-number" pattern="\d*">
+  		</label>
+  		<input type="button" value="Back to App" onClick="backToApp()">
+  	</form>
   </body>
 </html>
